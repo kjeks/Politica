@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './public/stylesheets/MainPage.css';
+import './sass/stylesheets/MainPage.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
