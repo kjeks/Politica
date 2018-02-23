@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Switch, Route} from 'react-router-dom';
-import MainPageIndex from "../mainPage/MainPageIndex";
+import MainPageIndex from "../mainPage/MainPageContainer";
 import UserContainer from "../UserContainer";
 
 export default class MainRouter extends Component{

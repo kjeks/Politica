@@ -1,0 +1,3 @@
+export default {
+    MAIN_PAGE_INITIALIZE: 'MAIN_PAGE_INITIALIZE'
+};
