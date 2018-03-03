@@ -1,4 +1,3 @@
-import React from 'react';
 import MainPageTypes from "../../constants/actionTypes/MainPageTypes";
 import {connect} from 'react-redux';
 import MainPage from './MainPage';

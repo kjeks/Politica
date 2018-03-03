@@ -1,12 +1,10 @@
-import React from 'react';
+import React, {PureComponent} from 'react';
 
-const MainPage = ({mainPageIndex, initialize}) => {
-    console.log(mainPageIndex, initialize);
-    const test = mainPageIndex;
-    return (
-        <div onClick={initialize}>
-        MainPage {test}
-    </div>)
+export default class MainPage extends PureComponent {
+    render() {
+        return (
+            <div onClick={this.props.initialize}>
+                MainPage
+            </div>)
+    }
 }
-
-export default MainPage;
