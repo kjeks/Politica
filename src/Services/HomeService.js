@@ -4,7 +4,7 @@ import Content from "../mockedData/Content";
 export default {
     getContent(id) {
         return new Promise(resolve => {
-            setTimeout(resolve(HomeAdapter.createContent(Content(id))), 1000);
+            resolve(HomeAdapter.createContent(Content(id)))
         });
     }
 }

@@ -8,9 +8,9 @@ export default class MainPage extends PureComponent {
     };
     render() {
         return (
-            <div>
+            <div className='home-main'>
                 {this.props.homeMenu && <HomeMenu homeMenu={this.props.homeMenu} itemClicked={this.props.itemClicked}/>}
-                {this.props.homeContent && <HomeContent content={this.props.homeContent}/>}
+                {this.props.content && <HomeContent content={this.props.content}/>}
             </div>)
     }
 }
