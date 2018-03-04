@@ -1,6 +1,7 @@
 import Immutable from 'immutable';
 import HomeMenu from '../domain/Home/HomeMenu';
 import HomeMenuItem from '../domain/Home/HomeMenuItem';
+import HomeContent from '../domain/Home/HomeContent';
 
 export default {
     createHomeMenu(data) {
@@ -12,5 +13,8 @@ export default {
             menuItems: menuItemsMap,
             selectedId: menuItemsMap.first().id
         });
+    },
+    createContent(data) {
+        return new HomeContent({text: data.text})
     }
 }
