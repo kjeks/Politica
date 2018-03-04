@@ -9,7 +9,7 @@ export default class MainRouter extends Component {
         return (
             <div>
                 <MainMenu/>
-                <main>
+                <main className="main-content">
                     <Switch>
                         <Route exact path='/' component={MainPageIndex}/>
                         <Route path='/user' component={UserContainer}/>
