@@ -1,8 +1,8 @@
 import {combineReducers} from 'redux';
-import MainPageReducer from './MainPageReducer';
+import HomeMenuReducer from './home/HomeMenuReducer';
 
 const politica = combineReducers({
-    MainPageReducer
+    HomeMenuReducer
 });
 
 export default politica;
