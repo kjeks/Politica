@@ -10,7 +10,7 @@ export default class HomeMenu extends PureComponent {
                 className="menu-item"
                 key={index}
                 onClick={()=> {this.props.itemClicked(menuItem.id)}}
-            >{menuItem.name}</div>
+            ><div className='text'>{menuItem.name}</div></div>
         });
         return (
             <div className="home-menu">

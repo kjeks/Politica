@@ -1,0 +1,24 @@
+.home-menu
+  height: 100%
+  display: flex
+  flex-direction: column
+  position: fixed
+  background-color: darkgrey
+  align-items: center
+  justify-content: space-around
+  .menu-item
+    text-transform: capitalize
+    cursor: pointer
+    font-size: 14px
+    margin: 0 10px 0 10px
+    text-align: center
+    text-decoration: underline
+    flex-grow: 1
+    border-bottom: 1px solid black
+    position: relative
+    width: 80px
+    .text
+      position: absolute
+      top: 50%
+      &:hover
+        color: yellowgreen
