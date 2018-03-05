@@ -1,6 +1,4 @@
 import types from '../constants/actionTypes/MainPageTypes';
-import HomeAdapter from "../adapters/HomeAdapter";
-import MockedHomeItems from '../mockedData/MenuItems';
 import HomeService from "../Services/HomeService";
 
 export default {
@@ -17,11 +15,12 @@ export default {
         }
     },
     initialize: function () {
-        const menu = HomeAdapter.createHomeMenu(MockedHomeItems);
         return dispatch => {
-            dispatch(this.initializeAction(menu));
-            HomeService.getContent(menu.selectedId).then((content)=> {
-                dispatch(this.contentReceivedAction(content));
+            HomeService.getMenuItems().then(menu => {
+                dispatch(this.initializeAction(menu));
+                HomeService.getContent(menu.selectedId).then((content)=> {
+                    dispatch(this.contentReceivedAction(content));
+                });
             });
         }
     },

@@ -6,7 +6,8 @@ import HomeContent from '../domain/Home/HomeContent';
 export default {
     createHomeMenu(data) {
         let menuItemsMap = Immutable.Map();
-        data.forEach(menuItem => {
+
+        data.menuItems.forEach(menuItem => {
             menuItemsMap = menuItemsMap.set(menuItem.id, new HomeMenuItem(menuItem));
         });
         return new HomeMenu({
