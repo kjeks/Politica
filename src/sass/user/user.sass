@@ -1,6 +1,41 @@
 @import "../colors"
 
 .user-content
+  .user-header
+    height: 10%
+    width: 100%
+    font-size: 20px
+    text-transform: uppercase
+    text-align: center
+    background-color: $leather
+    .title
+      line-height: 70px
+  .user-info
+    .input-label
+      display: inline-block
+      vertical-align: middle
+      margin-right: 10px
+      font-weight: 600
+      color: $steel
+    .input
+      height: 20px
+      border: solid 2px $steel
+      &.changed
+        border: solid 2px $apricot
+    .user-topics
+      padding-top: 10px
+      width: 200px
+      .title
+        padding-bottom: 5px
+      .topic
+        .topic-name
+          text-indent: 15px
+          display: inline-block
+          vertical-align: middle
+        .checkbox
+          vertical-align: middle
+          float: right
+
   .user-footer
     position: fixed
     bottom: 0
@@ -9,4 +44,3 @@
     .button-group
       position: fixed
       right: 0
-
