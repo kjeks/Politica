@@ -3,9 +3,6 @@ import React, {PureComponent} from 'react';
 import Checkbox from "../common/Checkbox";
 
 export default class UserTopics extends PureComponent {
-    topicChanged = (name) => {
-        this.props.onChange(name);
-    };
     render() {
         const topics = this.props.topics.map((topic, index)=> {
             return <Checkbox label={topic.name}

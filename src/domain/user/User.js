@@ -24,6 +24,9 @@ export default class User extends UserRecord {
         return this.set('name', this.initialName).this.set('topics', restoredTopics);
     }
     saveChanges() {
-        return this.set('initialName', this.name).set('initialTopics', this.topics);
+        const updatedTopics = this.topics.map(topic => {
+            return topic.saveChanges();
+        });
+        return this.set('initialName', this.name).set('topics', updatedTopics);
     }
 }

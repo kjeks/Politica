@@ -11,7 +11,7 @@ export default {
     },
     saveUser: function (user) {
         return fetch(CommonConstants.serverUrl + '/user/', {
-            body: JSON.stringify(user),
+            body: UserAdapter.createUserResponse(user),
             headers: {
                 'content-type': 'application/json'
             },

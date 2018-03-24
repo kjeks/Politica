@@ -1,24 +1,31 @@
 @import "../colors";
+$checkbox-size: 15px;
+$icon-size: 12px;
+
 .checkbox-container {
   .checkbox-label{
     display: inline-block;
+    margin-right: 5px;
   }
   .checkbox {
-    height: 15px;
-    width: 15px;
-    background-color: $save;
+    height: $checkbox-size;
+    width: $checkbox-size;
+    background-color: $eggshell;
+    border: 1px solid $steel;
     display: inline-block;
-    z-index: 1;
+    z-index: 3;
     position: relative;
+    vertical-align: middle;
     &.selected {
-      z-index:3;
+      z-index: 1;
+      background-color: $save;
     }
   }
   .fa-check {
     position: relative;
     color: $steel;
-    font-size: 15px;
-    left: -15px;
+    font-size: $icon-size;
+    left: -$checkbox-size;
     z-index:2;
   }
 }

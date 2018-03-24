@@ -6,4 +6,8 @@ const TopicRecord = Immutable.Record({
     initialSelected: null
 });
 
-export default class Topic extends TopicRecord {};
+export default class Topic extends TopicRecord {
+    saveChanges () {
+        return this.set('initialSelected', this.selected);
+    }
+};

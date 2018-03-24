@@ -8,5 +8,14 @@ export default {
             topics = topics.set(topic.name, new Topic({name: topic.name, selected: topic.selected, initialSelected: topic.selected}));
         });
         return new User({name: data.name, topics: topics});
+    },
+    createUserResponse(user) {
+        let topicList = [];
+
+        user.topics.forEach(topic => {
+            topicList.push({name: topic.name, selected: topic.selected})
+        });
+
+        return {name: user.name, topics: topicList}
     }
 }
