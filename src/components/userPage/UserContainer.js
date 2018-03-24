@@ -7,8 +7,14 @@ const mapDispatchToProps = dispatch => {
         userValueChange: (newValue, changedField) => dispatch(
             UserPageActions.userValueChange(newValue, changedField)
         ),
-        userTopicChange: (newValues) => dispatch (
-            UserPageActions.userTopicChange(newValues)
+        userTopicChange: (name) => dispatch (
+            UserPageActions.userTopicChange(name)
+        ),
+        saveChanges: (user) => dispatch (
+            UserPageActions.userSaveChanges(user)
+        ),
+        cancelChanges: () => dispatch(
+            UserPageActions.userCancelChanges()
         ),
         initialize: () => dispatch(
             UserPageActions.initialize()

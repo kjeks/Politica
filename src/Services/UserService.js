@@ -8,5 +8,14 @@ export default {
             .then((res)=> {
                 return UserAdapter.createUser(res);
             })
+    },
+    saveUser: function (user) {
+        return fetch(CommonConstants.serverUrl + '/user/', {
+            body: JSON.stringify(user),
+            headers: {
+                'content-type': 'application/json'
+            },
+            method: 'POST'
+        });
     }
 }

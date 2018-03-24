@@ -7,7 +7,7 @@ export default class Button extends PureComponent {
     };
     render () {
         return (
-            <button className={cx(this.createClassName())}>{this.props.text}</button>
+            <button className={cx(this.createClassName())} onClick={this.props.onClick}>{this.props.text}</button>
         )
     }
 }

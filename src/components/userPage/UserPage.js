@@ -7,6 +7,12 @@ export default class UserPage extends PureComponent {
     componentWillMount = () => {
         this.props.initialize();
     };
+    saveChanges = () => {
+        this.props.saveChanges(this.props.user);
+    };
+    cancelChanges = () => {
+        this.props.cancelChanges();
+    };
     render() {
         return (
             <div className="user-content">
@@ -16,7 +22,7 @@ export default class UserPage extends PureComponent {
                     userTopicChange={this.props.userTopicChange}
                     user={this.props.user}
                 />}
-                <UserFooter/>
+                <UserFooter saveChanges={this.saveChanges} cancelChanges={this.cancelChanges}/>
             </div>
         )
     }

@@ -27,15 +27,35 @@ export default  {
             dispatch(this.userValueChangeAction(newValue, changedField));
         }
     },
-    userTopicChange: function (newValues) {
+    userTopicChange: function (name) {
         return dispatch => {
-            dispatch(this.userTopicChangeAction(newValues))
+            dispatch(this.userTopicChangeAction(name))
         }
     },
-    userTopicChangeAction: function (newValues) {
+    userTopicChangeAction: function (name) {
         return {
             type: UserTypes.USER_TOPIC_CHANGED,
-            newValues: newValues
+            name: name
+        }
+    },
+    userSaveChanges: function (user) {
+        return dispatch => {
+            UserService.saveUser(user).then(dispatch(this.userSaveChangesAction()));
+        }
+    },
+    userSaveChangesAction: function () {
+        return {
+            type: UserTypes.USER_SAVE_CHANGES
+        }
+    },
+    userCancelChanges: function () {
+        return dispatch => {
+            dispatch(this.userCancelChangesAction())
+        }
+    },
+    userCancelChangesAction: function () {
+        return {
+            type: UserTypes.USER_CANCEL_CHANGES
         }
     }
 }

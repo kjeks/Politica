@@ -1,7 +1,12 @@
 import User from '../domain/user/User';
 import Immutable from 'immutable';
+import Topic from "../domain/user/Topic";
 export default {
     createUser(data) {
-        return new User({name: data.name, topics: Immutable.List(data.topics)});
+        let topics = Immutable.Map();
+        data.topics.forEach((topic)=> {
+            topics = topics.set(topic.name, new Topic({name: topic.name, selected: topic.selected, initialSelected: topic.selected}));
+        });
+        return new User({name: data.name, topics: topics});
     }
 }
