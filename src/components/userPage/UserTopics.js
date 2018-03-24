@@ -8,6 +8,7 @@ export default class UserTopics extends PureComponent {
             return <Checkbox label={topic.name}
                              onClick={()=> {this.props.userTopicChange(topic.name)}}
                              selected={topic.selected}
+                             changed={topic.hasChanged()}
                              key={index}
             />
         });

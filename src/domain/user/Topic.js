@@ -10,4 +10,7 @@ export default class Topic extends TopicRecord {
     saveChanges () {
         return this.set('initialSelected', this.selected);
     }
+    hasChanged () {
+        return this.initialSelected !== this.selected;
+    }
 };
