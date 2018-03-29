@@ -13,6 +13,6 @@ export default class UserTopics extends PureComponent {
             />
         });
 
-        return <div className="user-topics form-checkbox">{topics.toList()}</div>
+        return <div className="user-topics">{topics.toList()}</div>
     }
 }

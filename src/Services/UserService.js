@@ -10,8 +10,10 @@ export default {
             })
     },
     saveUser: function (user) {
+        console.log(UserAdapter.createUserResponse(user));
+        console.log(JSON.stringify(UserAdapter.createUserResponse(user)));
         return fetch(CommonConstants.serverUrl + '/user/', {
-            body: UserAdapter.createUserResponse(user),
+            body: JSON.stringify(UserAdapter.createUserResponse(user)),
             headers: {
                 'content-type': 'application/json'
             },

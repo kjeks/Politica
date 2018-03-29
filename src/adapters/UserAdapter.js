@@ -7,7 +7,7 @@ export default {
         data.topics.forEach((topic)=> {
             topics = topics.set(topic.name, new Topic({name: topic.name, selected: topic.selected, initialSelected: topic.selected}));
         });
-        return new User({name: data.name, topics: topics});
+        return new User({name: data.name, id: data.id, topics: topics});
     },
     createUserResponse(user) {
         let topicList = [];
@@ -16,6 +16,6 @@ export default {
             topicList.push({name: topic.name, selected: topic.selected})
         });
 
-        return {name: user.name, topics: topicList}
+        return {name: user.name, id: user.id, topics: topicList}
     }
 }

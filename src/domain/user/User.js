@@ -3,7 +3,8 @@ import Immutable from 'immutable';
 const UserRecord = Immutable.Record({
     name: null,
     initialName: null,
-    topics: null
+    topics: null,
+    id: null
 });
 
 export default class User extends UserRecord {
@@ -11,7 +12,8 @@ export default class User extends UserRecord {
         super({
             initialName: props.name,
             name: props.name,
-            topics: props.topics
+            topics: props.topics,
+            id: props.id
         });
     }
     isNameChanged() {
