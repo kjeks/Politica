@@ -4,9 +4,6 @@ import HomeContent from "./HomeContent";
 import HomeHeader from "./HomeHeader";
 
 export default class MainPage extends PureComponent {
-    componentWillMount = () => {
-        this.props.initialize();
-    };
     render() {
         return (
             <div className='home-main'>
@@ -15,7 +12,6 @@ export default class MainPage extends PureComponent {
                     {this.props.homeMenu && <HomeMenu homeMenu={this.props.homeMenu} itemClicked={this.props.itemClicked}/>}
                     {this.props.content && <HomeContent content={this.props.content}/>}
                 </div>
-
             </div>)
     }
 }
