@@ -1,8 +1,24 @@
+import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import UserPage from './UserPage';
 import UserPageActions from "../../actions/UserPageActions";
 
-const mapDispatchToProps = dispatch => {
+class UserContainer extends Component {
+    componentWillMount = () => {
+        this.props.initialize();
+    };
+    render () {
+        const {userValueChange, userTopicChange, saveChanges, cancelChanges, user} = this.props;
+        return <UserPage
+            userValueChange={userValueChange}
+            saveChanges={saveChanges}
+            userTopicChange={userTopicChange}
+            cancelChanges={cancelChanges}
+            user={user}
+        />
+    }
+}
+const mapDispatchToProps = (dispatch) => {
     return {
         userValueChange: (newValue, changedField) => dispatch(
             UserPageActions.userValueChange(newValue, changedField)
@@ -27,4 +43,4 @@ const mapStateToProps = state => {
     }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserPage);
+export default connect(mapStateToProps, mapDispatchToProps)(UserContainer);
