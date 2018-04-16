@@ -4,7 +4,7 @@ export default class UserHeader extends PureComponent {
     render () {
         return (
             <div className="user-header">
-                <div className="title">user profile</div>
+                <div className="user-header__title">user profile</div>
             </div>
         )
     }

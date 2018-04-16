@@ -11,8 +11,8 @@ export default class UserInfo extends PureComponent {
         const {user} = this.props;
         return (
             <div className="user-info">
-                <div className="input-label">name:</div>
-                <input className={cx('input', {'changed': user.isNameChanged()})}
+                <div className="user-info__input-label">name:</div>
+                <input className={cx('user-info__input', {'user-info__input--changed': user.isNameChanged()})}
                        defaultValue={user.initialName}
                        onChange={this.firstNameChange}/>
                 <UserTopics topics={user.topics} userTopicChange={this.props.userTopicChange}/>

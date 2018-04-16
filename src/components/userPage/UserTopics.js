@@ -13,6 +13,9 @@ export default class UserTopics extends PureComponent {
             />
         });
 
-        return <div className="user-topics">{topics.toList()}</div>
+        return <div className="user-topics user-topics--small">
+            <div className="user-topics__title">My topics</div>
+            {topics.toList()}
+            </div>
     }
 }
