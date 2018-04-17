@@ -5,8 +5,8 @@ export default class MainMenu extends PureComponent {
     render() {
         return (
             <nav className="main-navigation">
-                <Link to="/" className="navigation-item">Main</Link>
-                <Link to="/user" className="navigation-item">User</Link>
+                <Link to="/" className="main-navigation__navigation-item">Main</Link>
+                <Link to="/user" className="main-navigation__navigation-item">User</Link>
             </nav>
         )
     }

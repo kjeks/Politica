@@ -1,7 +1,7 @@
 import React, {PureComponent} from 'react';
 import UserInfo from "./UserInfo";
 import UserFooter from "./UserFooter";
-import UserHeader from "./UserHeader";
+import MainHeader from "../common/MainHeader";
 
 export default class UserPage extends PureComponent {
     saveChanges = () => {
@@ -9,8 +9,8 @@ export default class UserPage extends PureComponent {
     };
     render() {
         return (
-            <div className="user-content">
-                <UserHeader/>
+            <div className="user-main">
+                <MainHeader title='user profile'/>
                 {this.props.user && <UserInfo
                     userValueChange={this.props.userValueChange}
                     userTopicChange={this.props.userTopicChange}

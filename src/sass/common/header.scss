@@ -1,0 +1,13 @@
+@import "../colors";
+
+.main-header {
+  height: 10%;
+  width: 100%;
+  font-size: 20px;
+  text-transform: uppercase;
+  text-align: center;
+  background-color: $leather;
+  .main-header__title {
+    line-height: 70px
+  }
+}

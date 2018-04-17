@@ -8,11 +8,11 @@ export default class HomeMenu extends PureComponent {
     render() {
         const menuItems = this.props.homeMenu.menuItems.map((menuItem, index) => {
             return <div
-                className={cx("menu-item", {selected: menuItem.id === this.props.homeMenu.selectedId})}
+                className={cx("menu-item", {'menu-item--selected': menuItem.id === this.props.homeMenu.selectedId})}
                 key={index}
                 onClick={()=> {this.props.itemClicked(menuItem.id)}}
             >
-                <div className='text'>{menuItem.name}</div>
+                <div className='menu-item__text'>{menuItem.name}</div>
             </div>
         });
         return (
