@@ -18,7 +18,7 @@ export default {
         return dispatch => {
             HomeService.getMenuItems().then(menu => {
                 dispatch(this.initializeAction(menu));
-                HomeService.getContent(menu.selectedId).then((content)=> {
+                HomeService.getContent(menu.get('selectedId')).then((content)=> {
                     dispatch(this.contentReceivedAction(content));
                 });
             });

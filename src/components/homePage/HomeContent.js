@@ -5,7 +5,7 @@ export default class HomeContent extends PureComponent {
         return (
             <div className='home-content'>
                 <div className="description">
-                    {this.props.content.text}
+                    {this.props.content.get('text')}
                 </div>
             </div>
         )
