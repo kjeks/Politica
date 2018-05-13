@@ -6,9 +6,9 @@ export default class HomeMenu extends PureComponent {
         this.props.itemClicked(itemId);
 };
     render() {
-        const menuItems = this.props.homeMenu.get('menuItems').map((menuItem, index) => {
+        const menuItems = this.props.homeMenuItem.get('homeMenu').map((menuItem, index) => {
             return <div
-                className={cx("menu-item", {'menu-item--selected': menuItem.get('id') === this.props.homeMenu.get('selectedId')})}
+                className={cx("menu-item", {'menu-item--selected': menuItem.get('id') === this.props.homeMenuItem.get('selectedId')})}
                 key={index}
                 onClick={()=> {this.props.itemClicked(menuItem.get('id'))}}
             >

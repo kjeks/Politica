@@ -13,7 +13,7 @@ export default {
         return fetch(CommonConstants.serverUrl + '/homemenu')
             .then(response => response.json())
             .then((res) => {
-                return Immutable.fromJS(res);
+                return Immutable.fromJS(res.menuItems);
             });
     }
 }

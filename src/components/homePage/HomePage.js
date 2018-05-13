@@ -9,7 +9,7 @@ export default class MainPage extends PureComponent {
             <div className='home-main'>
                 <MainHeader title={'welcome to discussio'}/>
                 <div className="home-container">
-                    {this.props.homeMenu && <HomeMenu homeMenu={this.props.homeMenu} itemClicked={this.props.itemClicked}/>}
+                    {!!this.props.homeMenuItem.get('homeMenu') && <HomeMenu homeMenuItem={this.props.homeMenuItem} itemClicked={this.props.itemClicked}/>}
                     {this.props.content && <HomeContent content={this.props.content}/>}
                 </div>
             </div>)

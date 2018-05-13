@@ -9,7 +9,11 @@ class Home extends Component {
     };
     render () {
         return (
-            <MainPage {...this.props}/>
+            <MainPage
+                homeMenuItem={this.props.homeMenuItem}
+                content={this.props.content}
+                itemClicked={this.props.itemClicked}
+            />
         )
     }
 }
@@ -26,7 +30,7 @@ const mapDispatchToProps = dispatch => {
 };
 const mapStateToProps = state => {
     return {
-        homeMenu: state.HomeMenuReducer,
+        homeMenuItem: state.HomeMenuReducer,
         content: state.HomeContentReducer
     }
 };
