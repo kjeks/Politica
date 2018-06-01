@@ -11,7 +11,7 @@ export default class UserPage extends PureComponent {
         return (
             <div className="user-main">
                 <MainHeader title='user profile'/>
-                {this.props.user && <UserInfo
+                {this.props.user.get('id') && <UserInfo
                     userValueChange={this.props.userValueChange}
                     userTopicChange={this.props.userTopicChange}
                     user={this.props.user}

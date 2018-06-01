@@ -12,10 +12,10 @@ export default class UserInfo extends PureComponent {
         return (
             <div className="user-info">
                 <div className="user-info__input-label">name:</div>
-                <input className={cx('user-info__input', {'user-info__input--changed': user.isNameChanged()})}
-                       defaultValue={user.initialName}
+                <input className={cx('user-info__input', {'user-info__input--changed': user.get('name') !== user.get('initialName')})}
+                       value={user.get('name')}
                        onChange={this.firstNameChange}/>
-                <UserTopics topics={user.topics} userTopicChange={this.props.userTopicChange}/>
+                <UserTopics topics={user.get('topics')} initialTopics={user.get('initialTopics')} userTopicChange={this.props.userTopicChange}/>
             </div>
         )
     }
