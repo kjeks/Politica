@@ -27,11 +27,10 @@ export default function (state = initialState, action) {
             return state.updateIn(['topics', indexOfUpdated], (topic) => {
                 return topic.set('selected', !topic.get('selected'));
             });
-
         case UserTypes.USER_CANCEL_CHANGES:
             return state.set('name', state.get('initialName')).set('topics', state.get('initialTopics'));
         case UserTypes.USER_SAVE_CHANGES:
-            return state.saveChanges();
+            return state.set('initialName', state.get('name')).set('initialTopics', state.get('topics'));
         default:
             return state;
     }
