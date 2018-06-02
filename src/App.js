@@ -4,8 +4,8 @@ import {createStore, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
 import './App.css';
 import {BrowserRouter} from 'react-router-dom';
-import MainRouter from './components/router/MainRouter';
-import reducers from './reducers';
+import MainRouter from './mainMenu/MainRouter';
+import reducers from './common/index';
 import ActionLogger from "./middleware/ActionLogger";
 
 class App extends Component {

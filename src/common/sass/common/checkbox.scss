@@ -1,0 +1,40 @@
+@import "../../../sass/colors";
+$checkbox-size: 15px;
+$icon-size: 12px;
+
+
+.labeled-checkbox {
+  margin-bottom: 5px;
+  .labeled-checkbox__checkbox-label{
+    display: inline-block;
+    margin-right: 5px;
+  }
+  .labeled-checkbox__checkbox-container {
+    float: right;
+  }
+
+  .fa-check {
+    position: relative;
+    color: $steel;
+    font-size: $icon-size;
+    left: -$checkbox-size;
+    z-index:2;
+  }
+}
+.checkbox {
+  height: $checkbox-size;
+  width: $checkbox-size;
+  background-color: $eggshell;
+  border: 1px solid $steel;
+  display: inline-block;
+  z-index: 3;
+  position: relative;
+  vertical-align: middle;
+  &.checkbox--selected {
+    z-index: 1;
+    background-color: $save;
+  }
+  &.checkbox--changed {
+    border: 1px solid $apricot;
+  }
+}

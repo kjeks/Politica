@@ -1,0 +1,25 @@
+@import "../../../sass/colors"
+%hover
+  border: $forest 1px solid
+  font-weight: bolder
+  font-size: 12px
+
+.button
+  padding: 5px
+  margin: 0 10px 0 10px
+  border: none
+  cursor: pointer
+  width: 110px
+  height: 40px
+  border-radius: 8px
+  vertical-align: middle
+  text-transform: uppercase
+  font-size: 11px
+  &:hover
+    @extend %hover
+  &.save
+    background-color: $save
+    color: $eggshell
+  &.cancel
+    background-color: $cancel
+    color: $eggshell
