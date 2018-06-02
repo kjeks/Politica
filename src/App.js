@@ -10,7 +10,7 @@ import ActionLogger from "./middleware/ActionLogger";
 
 class App extends Component {
   render() {
-    let store = createStore(reducers, applyMiddleware(ActionLogger, thunk));
+    let store = createStore(reducers, applyMiddleware(thunk, ActionLogger));
     return (
       <Provider store={store}>
         <BrowserRouter>

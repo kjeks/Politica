@@ -2,60 +2,39 @@ import UserTypes from "./UserTypes";
 import UserService from "./UserService";
 
 export default  {
-    initializeAction: function (user) {
-        return {
-            type: UserTypes.USER_INITIALIZED,
-            user: user
-        }
-    },
     initialize: function () {
         return dispatch => {
             UserService.getUser().then((user) => {
-                dispatch(this.initializeAction(user));
+                dispatch({type: UserTypes.USER_INITIALIZED, user: user});
             });
-        }
-    },
-    userValueChangeAction: function (newValue, changedField) {
-        return {
-            type: UserTypes.USER_VALUE_CHANGED,
-            newValue: newValue,
-            changedField: changedField
         }
     },
     userValueChange: function (newValue, changedField) {
         return dispatch => {
-            dispatch(this.userValueChangeAction(newValue, changedField));
+            dispatch({
+                type: UserTypes.USER_VALUE_CHANGED,
+                newValue: newValue,
+                changedField: changedField
+            });
         }
     },
     userTopicChange: function (name) {
         return dispatch => {
-            dispatch(this.userTopicChangeAction(name))
-        }
-    },
-    userTopicChangeAction: function (name) {
-        return {
-            type: UserTypes.USER_TOPIC_CHANGED,
-            name: name
+            dispatch({
+                type: UserTypes.USER_TOPIC_CHANGED,
+                name: name
+            })
         }
     },
     userSaveChanges: function (user) {
         return dispatch => {
-            UserService.saveUser(user).then(dispatch(this.userSaveChangesAction()));
+            UserService.saveUser(user).then(dispatch({type: UserTypes.USER_SAVE_CHANGES}));
         }
     },
-    userSaveChangesAction: function () {
-        return {
-            type: UserTypes.USER_SAVE_CHANGES
-        }
-    },
+
     userCancelChanges: function () {
         return dispatch => {
-            dispatch(this.userCancelChangesAction())
-        }
-    },
-    userCancelChangesAction: function () {
-        return {
-            type: UserTypes.USER_CANCEL_CHANGES
+            dispatch({type: UserTypes.USER_CANCEL_CHANGES})
         }
     }
 }
