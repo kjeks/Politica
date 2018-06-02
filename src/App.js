@@ -6,10 +6,11 @@ import './App.css';
 import {BrowserRouter} from 'react-router-dom';
 import MainRouter from './components/router/MainRouter';
 import reducers from './reducers';
+import ActionLogger from "./middleware/ActionLogger";
 
 class App extends Component {
   render() {
-    let store = createStore(reducers, applyMiddleware(thunk));
+    let store = createStore(reducers, applyMiddleware(ActionLogger, thunk));
     return (
       <Provider store={store}>
         <BrowserRouter>

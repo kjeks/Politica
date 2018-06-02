@@ -9,7 +9,6 @@ const initialState = Immutable.Map({
 });
 
 export default function (state = initialState, action) {
-    console.log(action);
     switch(action.type) {
         case UserTypes.USER_INITIALIZED:
             const user = action.user;
