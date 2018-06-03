@@ -6,7 +6,7 @@ export default class Topic extends PureComponent {
     }
     render () {
         return (
-            <div onClick={this.onTopicClick}>{this.props.name}</div>
+            <div onClick={this.onTopicClick} className='topic-list__item'>{this.props.name}</div>
         )
     }
 }

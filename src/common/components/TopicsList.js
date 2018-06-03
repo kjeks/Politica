@@ -8,7 +8,7 @@ class TopicsList extends PureComponent {
         favoriteTopics: Immutable.List(),
         otherTopics: Immutable.List()
     };
-    render () {
+    render() {
         const favoriteTopics = this.props.favoriteTopics.map(topic => {
             return <Topic id={topic.get('id')} name={topic.get('name')} key={topic.get('id')}/>
         });
@@ -16,13 +16,18 @@ class TopicsList extends PureComponent {
             return <Topic id={topic.get('id')} name={topic.get('name')} key={topic.get('id')}/>
         });
         return (
-            <div>
-                <div>Favorite Topics</div>
-                {favoriteTopics}
-                <div>other Topics</div>
-                {otherTopics}
+            <div className="topic-lists">
+                <div className="topic-list">
+                    <div className="topic-list__title">Favorite Topics</div>
+                    {favoriteTopics}
+                </div>
+                <div className="topic-list">
+                    <div className="topic-list__title">other Topics</div>
+                    {otherTopics}
+                </div>
             </div>
         )
     }
 }
+
 export default TopicListHoc(TopicsList);
