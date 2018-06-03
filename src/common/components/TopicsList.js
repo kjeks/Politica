@@ -9,11 +9,23 @@ class TopicsList extends PureComponent {
         otherTopics: Immutable.List()
     };
     render() {
+
         const favoriteTopics = this.props.favoriteTopics.map(topic => {
-            return <Topic id={topic.get('id')} name={topic.get('name')} key={topic.get('id')}/>
+            return <Topic
+                topic={topic}
+                onTopicSelected={this.props.onTopicSelected}
+                selected={topic.get('id') === this.props.selectedTopicId}
+                key={topic.get('id')}
+            />
         });
+
         const otherTopics = this.props.otherTopics.map(topic => {
-            return <Topic id={topic.get('id')} name={topic.get('name')} key={topic.get('id')}/>
+            return <Topic
+                topic={topic}
+                onTopicSelected={this.props.onTopicSelected}
+                selected={topic.get('id') === this.props.selectedTopicId}
+                key={topic.get('id')}
+            />
         });
         return (
             <div className="topic-lists">

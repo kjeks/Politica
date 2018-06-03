@@ -7,14 +7,10 @@ export default function (TopicListComponent) {
         constructor (props) {
             super(props);
             this.props.fetchTopicLists(props.userId);
-
         }
         render () {
             return (
-                <TopicListComponent
-                    favoriteTopics={this.props.favoriteTopics}
-                    otherTopics={this.props.otherTopics}
-                />
+                <TopicListComponent{...this.props}/>
             );
         }
     }
