@@ -3,7 +3,7 @@ import Immutable from 'immutable';
 
 export default {
     getContent(id) {
-        return fetch(CommonConstants.serverUrl + '/homeContent/' + id)
+        return fetch(CommonConstants.serverUrl + `/homeContent/${id}`)
             .then(response => response.json())
             .then((res) => {
                 return Immutable.fromJS(res);
