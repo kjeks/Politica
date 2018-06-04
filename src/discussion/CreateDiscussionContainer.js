@@ -3,28 +3,57 @@ import {connect} from 'react-redux';
 import DiscussionActions from "./CreateDiscussionActions";
 import MainHeader from "../common/components/MainHeader";
 import TopicsList from "../common/components/TopicsList";
+import DiscussionConfig from './DiscussionConfig';
+import Button from '../common/components/Button';
 
 class CreateDiscussionContainer extends Component {
-    render (){
-        return(
+    onDiscussionCreated = () => {
+        this.props.onDiscussionCreated(this.props.config)
+    };
+
+    render() {
+        return (
             <div>
                 <MainHeader title={'Create a new discussion'}/>
                 <TopicsList
                     onTopicSelected={this.props.onTopicSelected}
                     selectedTopicId={this.props.selectedTopicId}
                 />
+                {this.props.selectedTopicId &&
+                <span>
+                    <DiscussionConfig
+                        onChangeLevelRange={this.props.onChangeLevelRange}
+                        onChangeNumberOfDebaters={this.props.onChangeNumberOfDebaters}
+                        onQuestionTextChange={this.props.onQuestionTextChange}
+                        onToggleSpectatorsAllowed={this.props.onToggleSpectatorsAllowed}
+                        config={this.props.config}
+                    />
+                    <Button text="create discussion" className='new-discussion-button save' onClick={this.onDiscussionCreated}/>
+                </span>}
             </div>
         )
     }
 }
-function mapStateToProps (state) {
+
+function mapStateToProps(state) {
     return {
-        selectedTopicId: state.CreateDiscussionReducer.get('selectedTopicId')
+        selectedTopicId: state.CreateDiscussionReducer.get('selectedTopicId'),
+        questionText: state.CreateDiscussionReducer.get('questionText'),
+        forDebaters: state.CreateDiscussionReducer.get('forDebaters'),
+        againstDebaters: state.CreateDiscussionReducer.get('againstDebaters'),
+        spectatorsAllowed: state.CreateDiscussionReducer.get('spectatorsAllowed'),
+        config: state.CreateDiscussionReducer
     }
 }
-function mapDispatchToProps (dispatch) {
+
+function mapDispatchToProps(dispatch) {
     return {
-        onTopicSelected: (id) => dispatch(DiscussionActions.onTopicSelected(id))
+        onTopicSelected: (id) => dispatch(DiscussionActions.onTopicSelected(id)),
+        onChangeLevelRange: (newValue, type) => dispatch(DiscussionActions.onLevelRangeChange(newValue, type)),
+        onQuestionTextChange: (event) => dispatch(DiscussionActions.onDiscussionTextChange(event.target.value)),
+        onChangeNumberOfDebaters: (newValue, type) => dispatch(DiscussionActions.onNumberOfDebatersChange(newValue, type)),
+        onToggleSpectatorsAllowed: () => dispatch(DiscussionActions.onToggleSpectatorsAllowed()),
+        onDiscussionCreated: (config) => dispatch(DiscussionActions.onDiscussionCreated(config))
     }
 }
 

@@ -11,8 +11,16 @@ class TopicsList extends PureComponent {
     render() {
         return (
             <div className="topic-lists">
-                <TopicList topicList={this.props.favoriteTopics} name="favorite Topics"/>
-                <TopicList topicList={this.props.otherTopics} name="other Topics"/>
+                <TopicList topicList={this.props.favoriteTopics}
+                           name="favorite Topics"
+                           onTopicSelected={this.props.onTopicSelected}
+                           selectedTopicId={this.props.selectedTopicId}
+                />
+                <TopicList topicList={this.props.otherTopics}
+                           name="other Topics"
+                           onTopicSelected={this.props.onTopicSelected}
+                           selectedTopicId={this.props.selectedTopicId}
+                />
             </div>
         )
     }

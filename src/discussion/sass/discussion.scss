@@ -1,0 +1,48 @@
+.discussion-config {
+  display: inline-block;
+  vertical-align: top;
+  padding-left: 1%;
+  width: 33%;
+  .discussion-config__title {
+    font-size: 24px;
+    padding-bottom:15px;
+    text-transform: uppercase;
+  }
+  .discussion-config__options {
+    width: 45%;
+  }
+}
+.level-range-block {
+  vertical-align: top;
+  padding-bottom: 20px;
+  .level-range-block__title {
+    font-size: 20px;
+    padding-bottom: 5px;
+  }
+}
+
+.level-range {
+  display: inline-block;
+  .level-range__value {
+    width:50%;
+  }
+}
+
+.number-of-debaters-block {
+  vertical-align: top;
+  padding-bottom: 20px;
+  .number-of-debaters__title {
+    font-size: 20px;
+    padding-bottom: 5px;
+  }
+}
+
+.number-of-debaters {
+  display: inline-block;
+  .number-of-debaters__value {
+    width:50%;
+  }
+}
+.new-discussion-button {
+  vertical-align: bottom;
+}

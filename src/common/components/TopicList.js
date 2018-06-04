@@ -12,7 +12,6 @@ export default class TopicList extends PureComponent {
                 key={topic.get('id')}
             />
         });
-
         return (
             <CollapsibleComponent title={this.props.name} className="topic-list">
                 {topicList}
