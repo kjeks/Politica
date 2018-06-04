@@ -2,6 +2,7 @@ import React, {PureComponent} from 'react';
 import Topic from "./Topic";
 import Immutable from 'immutable';
 import TopicListHoc from "../HOCS/TopicListHoc";
+import CollapsibleComponent from "./CollapsibleComponent";
 
 class TopicsList extends PureComponent {
     static defaultProps = {
@@ -29,14 +30,16 @@ class TopicsList extends PureComponent {
         });
         return (
             <div className="topic-lists">
-                <div className="topic-list">
-                    <div className="topic-list__title">Favorite Topics</div>
-                    {favoriteTopics}
-                </div>
-                <div className="topic-list">
-                    <div className="topic-list__title">other Topics</div>
-                    {otherTopics}
-                </div>
+                <CollapsibleComponent title='Favorite Topics' className="topic-list">
+                    <div className="topic-list__items">
+                        {favoriteTopics}
+                    </div>
+                </CollapsibleComponent>
+                <CollapsibleComponent title="Other Topics" className="topic-list">
+                    <div className="topic-list__items">
+                        {otherTopics}
+                    </div>
+                </CollapsibleComponent>
             </div>
         )
     }
