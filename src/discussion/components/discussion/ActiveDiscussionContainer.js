@@ -2,22 +2,43 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import CreateDiscussionActions from "../../CreateDiscussionActions";
 import MainHeader from "../../../common/components/MainHeader";
-import ActiveDiscussionReducer from "../../ActiveDiscussionReducer";
+import ActiveDiscussionChat from "./ActiveDiscussionChat";
+import ActiveDiscussionMessage from "./ActiveDiscussionMessage";
+import GiftedChat from 'react-native-gifted-chat';
 
 class ActiveDiscussionContainer extends Component {
     constructor (props) {
         super(props);
-        console.log(this.props, "props");
         this.props.fetchDiscussion(this.props.match.params.id);
 
     }
     render () {
         return (
             <div>
-                <MainHeader title={'Create a new discussion'}/>
+                <MainHeader
+                    title={this.props.activeDiscussionData.get('questionText')}
+                    subCategory={this.props.activeDiscussionData.get('discussionName')}
+                />
+                <GiftedChat
+                    messages={[{
+                        _id: 1,
+                        text: 'Hello developer',
+                        createdAt: new Date(),
+                        user: {
+                            _id: 2,
+                            name: 'React Native',
+                            avatar: 'https://placeimg.com/140/140/any',
+                        }}]}
+                    user={{
+                        _id: 1
+                    }}
+                />
+                <ActiveDiscussionChat/>
+                <ActiveDiscussionMessage/>
             </div>
         )
     }
+
 }
 function mapStateToProps (state) {
     return {

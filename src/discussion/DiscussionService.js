@@ -1,5 +1,4 @@
 import CommonConstants from "../common/CommonConstants";
-import Immutable from 'immutable';
 
 export default {
     createNewDiscussion: (config) => {

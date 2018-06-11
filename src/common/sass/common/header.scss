@@ -1,13 +1,18 @@
-@import "../../../sass/colors";
+@import "../colors";
 
 .main-header {
   height: 10%;
   width: 100%;
-  font-size: 20px;
   text-transform: uppercase;
-  text-align: center;
+
   background-color: $leather;
   .main-header__title {
-    line-height: 70px
+    line-height: 70px;
+    font-size: 20px;
+    text-align: center;
+  }
+  .main-header__sub-category {
+    position: absolute;
+    top:0;
   }
 }
