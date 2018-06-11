@@ -14,10 +14,10 @@
     "react": "^16.2.0",
     "react-checkbox-group": "^4.0.1",
     "react-dom": "^16.2.0",
-    "react-native-gifted-chat": "^0.4.3",
     "react-redux": "^5.0.7",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
+    "react-web-gifted-chat": "0.0.4",
     "redux": "^3.7.2",
     "redux-immutable": "^4.0.0",
     "redux-thunk": "^2.2.0"

@@ -4,7 +4,7 @@ import CreateDiscussionActions from "../../CreateDiscussionActions";
 import MainHeader from "../../../common/components/MainHeader";
 import ActiveDiscussionChat from "./ActiveDiscussionChat";
 import ActiveDiscussionMessage from "./ActiveDiscussionMessage";
-import GiftedChat from 'react-native-gifted-chat';
+
 
 class ActiveDiscussionContainer extends Component {
     constructor (props) {
@@ -12,6 +12,7 @@ class ActiveDiscussionContainer extends Component {
         this.props.fetchDiscussion(this.props.match.params.id);
 
     }
+
     render () {
         return (
             <div>
@@ -19,20 +20,7 @@ class ActiveDiscussionContainer extends Component {
                     title={this.props.activeDiscussionData.get('questionText')}
                     subCategory={this.props.activeDiscussionData.get('discussionName')}
                 />
-                <GiftedChat
-                    messages={[{
-                        _id: 1,
-                        text: 'Hello developer',
-                        createdAt: new Date(),
-                        user: {
-                            _id: 2,
-                            name: 'React Native',
-                            avatar: 'https://placeimg.com/140/140/any',
-                        }}]}
-                    user={{
-                        _id: 1
-                    }}
-                />
+
                 <ActiveDiscussionChat/>
                 <ActiveDiscussionMessage/>
             </div>

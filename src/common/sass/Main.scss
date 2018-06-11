@@ -1,0 +1,25 @@
+@import "../../home/sass/MainMenu";
+@import "../../home/sass/Home";
+@import "../../user/sass/user";
+@import "./common/buttons";
+@import "./colors";
+@import "./common/checkbox";
+@import "./common/header";
+@import "./common/topicLists";
+@import "./common/collapsibleComponent";
+@import "../../discussion/sass/discussion";
+
+
+.main-content {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 70px;
+  background-color: $eggshell;
+}
+
+input:focus {
+  outline: none;
+  outline-offset: unset;
+}
+
