@@ -1,4 +1,6 @@
 import DiscussionActionTypes from "./DiscussionActionTypes";
+import {push} from 'connected-react-router';
+import DiscussionService from "./DiscussionService";
 
 export default {
     onTopicSelected: function (id) {
@@ -17,6 +19,20 @@ export default {
         return dispatch => dispatch({type: DiscussionActionTypes.NEW_DISCUSSION_TOGGLE_SPECTATORS_ALLOWED})
     },
     onDiscussionCreated: function (config) {
-        return dispatch => dispatch({type: DiscussionActionTypes.NEW_DISCUSSION_CREATED_REQUEST})
+        return dispatch => {
+            dispatch({type: DiscussionActionTypes.NEW_DISCUSSION_CREATED_REQUEST});
+            DiscussionService.createNewDiscussion(config).then(response => {
+                dispatch(push(`/discussion/${response.id}`));
+            })
+
+        };
+    },
+    fetchDiscussion: function (id) {
+        return dispatch => {
+            DiscussionService.fetchDiscussion(id).then(response => {
+                dispatch({type: DiscussionActionTypes.ACTIVE_DISCUSSION_DATA_RECEIVED, data: response});
+
+            });
+        }
     }
 }

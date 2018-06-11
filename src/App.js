@@ -1,21 +1,27 @@
 import React, { Component } from 'react';
+import Immutable from 'immutable';
 import {Provider} from 'react-redux';
 import {createStore, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
 import './App.css';
-import {BrowserRouter} from 'react-router-dom';
 import MainRouter from './mainMenu/MainRouter';
 import reducers from './common/index';
 import ActionLogger from "./middleware/ActionLogger";
+import {connectRouter, routerMiddleware, ConnectedRouter} from 'connected-react-router/immutable';
+import {createBrowserHistory} from 'history';
+
+const history = createBrowserHistory();
 
 class App extends Component {
   render() {
-    let store = createStore(reducers, applyMiddleware(thunk, ActionLogger));
+    const initialState = Immutable.Map();
+    let store = createStore(connectRouter(history)(reducers), initialState, applyMiddleware(thunk, routerMiddleware(history), ActionLogger));
+
     return (
       <Provider store={store}>
-        <BrowserRouter>
+        <ConnectedRouter history={history}>
           <MainRouter/>
-      </BrowserRouter>
+        </ConnectedRouter>
       </Provider>
     );
   }

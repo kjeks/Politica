@@ -37,12 +37,12 @@ class CreateDiscussionContainer extends Component {
 
 function mapStateToProps(state) {
     return {
-        selectedTopicId: state.CreateDiscussionReducer.get('selectedTopicId'),
-        questionText: state.CreateDiscussionReducer.get('questionText'),
-        forDebaters: state.CreateDiscussionReducer.get('forDebaters'),
-        againstDebaters: state.CreateDiscussionReducer.get('againstDebaters'),
-        spectatorsAllowed: state.CreateDiscussionReducer.get('spectatorsAllowed'),
-        config: state.CreateDiscussionReducer
+        selectedTopicId: state.getIn(['CreateDiscussionReducer','selectedTopicId']),
+        questionText: state.getIn(['CreateDiscussionReducer', 'questionText']),
+        forDebaters: state.getIn(['CreateDiscussionReducer', 'forDebaters']),
+        againstDebaters: state.getIn(['CreateDiscussionReducer', 'againstDebaters']),
+        spectatorsAllowed: state.getIn(['CreateDiscussionReducer','spectatorsAllowed']),
+        config: state.get('CreateDiscussionReducer')
     }
 }
 

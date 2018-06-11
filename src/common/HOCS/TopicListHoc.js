@@ -16,8 +16,8 @@ export default function (TopicListComponent) {
     }
     function mapStateToProps (state) {
         return {
-            favoriteTopics: state.TopicListReducer.get('favoriteTopics'),
-            otherTopics: state.TopicListReducer.get('otherTopics')
+            favoriteTopics: state.getIn(['TopicListReducer', 'favoriteTopics']),
+            otherTopics: state.getIn(['TopicListReducer', 'otherTopics'])
         }
     }
     function mapDispatchToProps (dispatch) {

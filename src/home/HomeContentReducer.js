@@ -1,6 +1,8 @@
 import MainPageTypes from './MainPageTypes';
+import Immutable from 'immutable';
 
-const initialState = null;
+const initialState = Immutable.Map({
+});
 
 export default function HomeContentReducer(state = initialState, action) {
     switch(action.type){

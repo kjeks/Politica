@@ -39,7 +39,7 @@ const mapDispatchToProps = (dispatch) => {
 };
 const mapStateToProps = state => {
     return {
-        user: state.UserReducer
+        user: state.get('UserReducer')
     }
 };
 
