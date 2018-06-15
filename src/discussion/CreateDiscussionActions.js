@@ -34,5 +34,10 @@ export default {
 
             });
         }
+    },
+    onMessageSent: function (message, userName) {
+        return dispatch => {
+            dispatch({type: DiscussionActionTypes.ACTIVE_DISCUSSION_MESSAGE_SENT, message: message})
+        }
     }
 }

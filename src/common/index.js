@@ -4,7 +4,7 @@ import HomeContentReducer from '../home/HomeContentReducer';
 import UserReducer from '../user/UserReducer';
 import TopicListReducer from '../common/TopicListReducer';
 import CreateDiscussionReducer from '../discussion/CreateDiscussionReducer';
-import ActiveDiscussionReducer from '../discussion/ActiveDiscussionReducer';
+import ActiveDiscussionReducer from '../discussion/components/active_discussion/ActiveDiscussionReducer';
 
 const politica = combineReducers({
     HomeMenuReducer: HomeMenuReducer,

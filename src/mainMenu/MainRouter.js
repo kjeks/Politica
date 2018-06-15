@@ -4,7 +4,7 @@ import MainPageIndex from "../home/components/HomeContainer";
 import UserContainer from "../user/components/UserContainer";
 import MainMenu from "./MainMenu";
 import NewDiscussionContainer from "../discussion/CreateDiscussionContainer";
-import ActiveDiscussionContainer from "../discussion/components/discussion/ActiveDiscussionContainer";
+import ActiveDiscussionContainer from "../discussion/components/active_discussion/ActiveDiscussionContainer";
 
 export default class MainRouter extends Component {
     render() {

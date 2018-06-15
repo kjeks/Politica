@@ -1,5 +1,5 @@
 import Immutable from 'immutable';
-import DiscussionActionTypes from "./DiscussionActionTypes";
+import DiscussionActionTypes from "../../DiscussionActionTypes";
 
 const initialState = Immutable.Map({
     againstDebaters: null,
@@ -9,7 +9,8 @@ const initialState = Immutable.Map({
     questionText: "",
     selectedTopicId: 2,
     spectatorsAllowed: false,
-    discussionName: null
+    discussionName: null,
+    messages: Immutable.List()
 });
 
 export default function ActiveDiscussionReducer(state = initialState, action) {
@@ -23,6 +24,12 @@ export default function ActiveDiscussionReducer(state = initialState, action) {
                 .set('questionText', data.questionText)
                 .set('spectatorsAllowed', data.spectatorsAllowed)
                 .set('discussionName', data.discussionName);
+        case DiscussionActionTypes.ACTIVE_DISCUSSION_MESSAGE_SENT:
+            const newMessage = Immutable.Map({
+                message: action.message,
+                userName:"hardcoded name"
+                });
+            return state.set('messages', state.get('messages').push(newMessage));
         default:
             return state;
     }

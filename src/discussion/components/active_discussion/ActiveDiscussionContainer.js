@@ -3,8 +3,7 @@ import {connect} from 'react-redux';
 import CreateDiscussionActions from "../../CreateDiscussionActions";
 import MainHeader from "../../../common/components/MainHeader";
 import ActiveDiscussionChat from "./ActiveDiscussionChat";
-import ActiveDiscussionMessage from "./ActiveDiscussionMessage";
-
+import ActiveDiscussionMessage from "./ActiveDiscussionNewMessage";
 
 class ActiveDiscussionContainer extends Component {
     constructor (props) {
@@ -12,17 +11,19 @@ class ActiveDiscussionContainer extends Component {
         this.props.fetchDiscussion(this.props.match.params.id);
 
     }
+    onMessageSent = (message) => {
+        this.props.onMessageSent(message, this.props.userName);
+    };
 
     render () {
         return (
-            <div>
+            <div className='chat'>
                 <MainHeader
                     title={this.props.activeDiscussionData.get('questionText')}
                     subCategory={this.props.activeDiscussionData.get('discussionName')}
                 />
-
-                <ActiveDiscussionChat/>
-                <ActiveDiscussionMessage/>
+                <ActiveDiscussionChat messages={this.props.activeDiscussionData.get('messages')}/>
+                <ActiveDiscussionMessage onMessageSent={this.onMessageSent}/>
             </div>
         )
     }
@@ -30,12 +31,15 @@ class ActiveDiscussionContainer extends Component {
 }
 function mapStateToProps (state) {
     return {
-        activeDiscussionData: state.get('ActiveDiscussionReducer')
+        activeDiscussionData: state.get('ActiveDiscussionReducer'),
+        userName: state.getIn(['UserReducer', 'userName'])
     }
 }
 function mapDispatchToProps (dispatch) {
     return {
-        fetchDiscussion: (discussionId) => {dispatch(CreateDiscussionActions.fetchDiscussion(discussionId))}
+        fetchDiscussion: (discussionId) => dispatch(CreateDiscussionActions.fetchDiscussion(discussionId)),
+        onMessageSent: (message, userName) => dispatch(CreateDiscussionActions.onMessageSent(message, userName))
+
     }
 }
 

@@ -46,3 +46,24 @@
 .new-discussion-button {
   vertical-align: bottom;
 }
+.chat {
+  .chat__message-input {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    line-height: 30px;
+    text-indent: 10px;
+    border: 1px solid black
+  }
+  .chat-message {
+    width: 200px;
+    padding:20px;
+    .chat-message__user-name {
+      color:$forest;
+    }
+    .chat-message__text {
+      background-color: darkgrey;
+    }
+    
+  }
+}
