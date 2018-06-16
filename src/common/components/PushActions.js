@@ -1,6 +1,6 @@
 export default {
-    onMessageReceived: function () {
-
+    onMessageReceived: function (message) {
+        return dispatch => dispatch({type: 'PUSH_MESSAGE_RECEIVED', message: message})
     },
     onUserAdded: function () {
 

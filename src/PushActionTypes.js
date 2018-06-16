@@ -1,0 +1,4 @@
+export default {
+    PUSH_MESSAGE_RECEIVED: 'PUSH_MESSAGE_RECEIVED'
+
+}

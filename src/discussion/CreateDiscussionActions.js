@@ -1,7 +1,6 @@
 import DiscussionActionTypes from "./DiscussionActionTypes";
 import {push} from 'connected-react-router';
 import DiscussionService from "./DiscussionService";
-import PushService from '../common/PushService';
 
 export default {
     onTopicSelected: function (id) {
@@ -33,7 +32,8 @@ export default {
             DiscussionService.fetchDiscussion(id).then(response => {
                 dispatch({
                     type: DiscussionActionTypes.ACTIVE_DISCUSSION_DATA_RECEIVED,
-                    data: response
+                    data: response,
+                    WS: 'OPEN'
                 });
 
             });
@@ -42,7 +42,11 @@ export default {
     onMessageSent: function (message) {
         return dispatch => {
             DiscussionService.sendMessage(message);
-            dispatch({type: DiscussionActionTypes.ACTIVE_DISCUSSION_MESSAGE_SENT, message: message})
+            dispatch({
+                type: DiscussionActionTypes.ACTIVE_DISCUSSION_MESSAGE_SENT,
+                message: message,
+                WS: 'SEND_MESSAGE'
+            })
         }
     }
 }
