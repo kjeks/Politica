@@ -11,5 +11,12 @@ export default {
     },
     fetchDiscussion: (id) => {
         return fetch(`${CommonConstants.serverUrl}/discussions/${id}`).then(response => response.json())
+    },
+    sendMessage: (message) => {
+        return fetch(`${CommonConstants.serverUrl}/discussions/messages`, {
+            body: JSON.stringify(message),
+            headers: {'content-type': 'application/json'},
+            method: 'POST'
+        });
     }
 }

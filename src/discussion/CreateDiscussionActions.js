@@ -1,6 +1,7 @@
 import DiscussionActionTypes from "./DiscussionActionTypes";
 import {push} from 'connected-react-router';
 import DiscussionService from "./DiscussionService";
+import PushService from '../common/PushService';
 
 export default {
     onTopicSelected: function (id) {
@@ -30,13 +31,17 @@ export default {
     fetchDiscussion: function (id) {
         return dispatch => {
             DiscussionService.fetchDiscussion(id).then(response => {
-                dispatch({type: DiscussionActionTypes.ACTIVE_DISCUSSION_DATA_RECEIVED, data: response});
+                dispatch({
+                    type: DiscussionActionTypes.ACTIVE_DISCUSSION_DATA_RECEIVED,
+                    data: response
+                });
 
             });
         }
     },
-    onMessageSent: function (message, userName) {
+    onMessageSent: function (message) {
         return dispatch => {
+            DiscussionService.sendMessage(message);
             dispatch({type: DiscussionActionTypes.ACTIVE_DISCUSSION_MESSAGE_SENT, message: message})
         }
     }
