@@ -11,8 +11,7 @@ const initialState = Immutable.Map({
     selectedTopicId: 2,
     spectatorsAllowed: false,
     discussionName: null,
-    messages: Immutable.List(),
-    socket: null
+    messages: Immutable.List()
 });
 
 export default function ActiveDiscussionReducer(state = initialState, action) {
@@ -25,8 +24,8 @@ export default function ActiveDiscussionReducer(state = initialState, action) {
                 .set('minLevel', data.minLevel)
                 .set('questionText', data.questionText)
                 .set('spectatorsAllowed', data.spectatorsAllowed)
-                .set('discussionName', data.discussionName)
-                .set('socket', data.socket);
+                .set('selectedTopicId', data.selectedTopicId)
+                .set('discussionName', data.discussionName);
         case PushActionTypes.PUSH_MESSAGE_RECEIVED:
             const newMessage = Immutable.Map({
                 message: action.message,
