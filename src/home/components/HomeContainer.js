@@ -31,7 +31,7 @@ const mapDispatchToProps = dispatch => {
 const mapStateToProps = state => {
     return {
         homeMenuItem: state.get('HomeMenuReducer'),
-        content: state.get('HomeContentReducer')
+        content: state.getIn(['HomeContentReducer', 'content'])
     }
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
