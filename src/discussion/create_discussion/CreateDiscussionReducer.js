@@ -1,5 +1,5 @@
 import Immutable from 'immutable';
-import DiscussionActionTypes from "./DiscussionActionTypes";
+import DiscussionActionTypes from "../DiscussionActionTypes";
 
 const initialState = Immutable.Map({
     selectedTopicId: null,

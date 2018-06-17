@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import CreateDiscussionActions from "../../CreateDiscussionActions";
+import CreateDiscussionActions from "../../create_discussion/CreateDiscussionActions";
 import MainHeader from "../../../common/components/MainHeader";
 import ActiveDiscussionChat from "./ActiveDiscussionChat";
 import ActiveDiscussionMessage from "./ActiveDiscussionNewMessage";

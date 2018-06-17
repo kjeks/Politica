@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import DiscussionActions from "./CreateDiscussionActions";
-import MainHeader from "../common/components/MainHeader";
-import TopicsList from "../common/components/TopicsList";
-import DiscussionConfig from './DiscussionConfig';
-import Button from '../common/components/Button';
+import MainHeader from "../../common/components/MainHeader";
+import TopicsList from "../../common/components/TopicsList";
+import DiscussionConfig from './components/DiscussionConfig';
+import Button from '../../common/components/Button';
 
 class CreateDiscussionContainer extends Component {
     onDiscussionCreated = () => {

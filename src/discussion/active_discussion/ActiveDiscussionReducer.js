@@ -1,6 +1,6 @@
 import Immutable from 'immutable';
-import DiscussionActionTypes from "../../DiscussionActionTypes";
-import PushActionTypes from "../../../PushActionTypes";
+import DiscussionActionTypes from "../DiscussionActionTypes";
+import PushActionTypes from "../../PushActionTypes";
 
 const initialState = Immutable.Map({
     againstDebaters: null,

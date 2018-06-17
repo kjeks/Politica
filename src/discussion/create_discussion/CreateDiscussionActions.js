@@ -1,6 +1,6 @@
-import DiscussionActionTypes from "./DiscussionActionTypes";
+import DiscussionActionTypes from "../DiscussionActionTypes";
 import {push} from 'connected-react-router';
-import DiscussionService from "./DiscussionService";
+import DiscussionService from "../DiscussionService";
 
 export default {
     onTopicSelected: function (id) {

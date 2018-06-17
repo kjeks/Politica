@@ -3,8 +3,8 @@ import HomeMenuReducer from '../home/HomeMenuReducer';
 import HomeContentReducer from '../home/HomeContentReducer';
 import UserReducer from '../user/UserReducer';
 import TopicListReducer from '../common/TopicListReducer';
-import CreateDiscussionReducer from '../discussion/CreateDiscussionReducer';
-import ActiveDiscussionReducer from '../discussion/components/active_discussion/ActiveDiscussionReducer';
+import CreateDiscussionReducer from '../discussion/create_discussion/CreateDiscussionReducer';
+import ActiveDiscussionReducer from '../discussion/active_discussion/ActiveDiscussionReducer';
 
 const politica = combineReducers({
     HomeMenuReducer: HomeMenuReducer,
