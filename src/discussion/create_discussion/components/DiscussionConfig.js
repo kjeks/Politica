@@ -1,7 +1,7 @@
 import React, {PureComponent} from 'react';
 import DiscussionLevel from "./DiscussionLevel";
 import DiscussionDebaters from "./DiscussionDebaters";
-import Checkbox from "../common/components/Checkbox";
+import Checkbox from "../../../common/components/Checkbox";
 
 export default class DiscussionConfig extends PureComponent {
     render () {
